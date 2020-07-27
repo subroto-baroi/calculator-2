@@ -11,10 +11,11 @@
     <div class="calculator">
         <form action="" name="form">
             <input type="text" value="" class="form-control main-bar" name="display" placeholder="0">
+			<hr>
 
             <div class="button-area">
                 <div class="line">
-                    <input type="button" name="btn" value="7" class="btn btn-primary" onclick="calculator(this.value)">
+                    <input type="button"  value="7" class="btn btn-primary" onclick="calculator(this.value)">
                     <input type="button" name="btn" value="8" class="btn btn-primary" onclick="calculator(this.value)">
                     <input type="button" name="btn" value="9" class="btn btn-primary" onclick="calculator(this.value)">
                     <input type="button" name="btn" value="+" class="btn btn-warning" onclick="calculator(this.value)">
@@ -38,8 +39,9 @@
                     <input type="button" name="btn" value="/" class="btn btn-warning" onclick="calculator(this.value)">
                 </div>
                 <div class="last">
-                    <input type="button" name="btn" value="C" class="btn btn-warning" onclick="display.value = null">
-                    <input type="button" name="btn" value="=" class="btn btn-warning" onclick="display.value = eval(display.value)">
+                    <input type="button" name="btn" value="C" class="btn btn-danger clean style" onclick="display.value = ''">
+                    <input type="button" name="btn" value="<" class="btn btn-danger clean" onclick="form.display.value = form.display.value.slice(0, -1)">
+                    <input  type="button" name="btn" value="=" class="btn btn-warning equal" onclick="display.value = eval(display.value)">
                 </div>
 
             </div>
@@ -50,7 +52,7 @@
 
     <script>
         function calculator(input){
-            form.display.value = form.display.value + input;
+            form.display.value +=input;
 
         }
     </script>
